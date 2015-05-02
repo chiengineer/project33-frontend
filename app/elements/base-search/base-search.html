@@ -1,0 +1,43 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-elements/paper-elements.html">
+
+<polymer-element name="base-search" attributes="type uri base path">
+  <template>
+    <link rel="stylesheet" href="base-search.scss">
+    <form id="search" is="ajax-form" action="{{base}}{{path}}" method="get">
+      <input hidden value="{{value}}" name="{{searchParam}}"/>
+      <paper-input id="query" on-keyup="{{ keyUp }}" value="{{value}}" label="Search {{ type }}" floatinglabel></paper-input>
+    </form>
+  </template>
+  <script>
+    (function () {
+      Polymer({
+        searchParam:  'query',
+        type:         "Library",
+        uri:          "localhost:8282",
+        base:         "/api/search",
+        keyUp: function (e) {
+          if (e.keyIdentifier == "Enter"){
+            formHandler(this.$.search)
+          }
+        }
+      });
+    })();
+
+    function formHandler(searchObject) {
+      searchObject.addEventListener('submitting',
+        function(event) {
+            var formData = event.detail.formData;
+            debugger
+        });
+      searchObject.addEventListener('submitted',
+        function(event) {
+            debugger
+            if (event.detail.status > 299) {
+                // submit has failed
+            }
+        });
+      response = searchObject.submit();
+    }
+  </script>
+</polymer-element>
