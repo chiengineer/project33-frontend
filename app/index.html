@@ -34,6 +34,7 @@
 
         <!-- Drawer Content -->
         <core-menu selected="0">
+          <base-search type="Comic Vine" path="/comicvine" responseHandler="{{ searchResponder }}" ></base-search>
           <core-item label="Yo"></core-item>
           <core-item label="Polymer"></core-item>
           <core-item label="App"></core-item>
@@ -51,11 +52,9 @@
         </core-toolbar>
 
         <!-- Main Content -->
+
         <div class="hero-unit">
-          <base-search type="Comic Vine" path="/comicvine" responseHandler="{{ searchResponder }}" ></base-search>
-          <yo-greeting></yo-greeting>
-          <p>You now have</p>
-          <yo-list></yo-list>
+          <comic-collection comics="{{displayComics}}"></comic-collection>
         </div>
       </core-header-panel>
     </core-drawer-panel>

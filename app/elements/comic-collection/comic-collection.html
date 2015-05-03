@@ -1,0 +1,19 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../comic-card/comic-card.html">
+
+
+<polymer-element name="comic-collection" attributes="comics">
+  <template>
+    <link rel="stylesheet" href="comic-collection.scss">
+    <template repeat="{{ comic in comics }}">
+      <comic-card comic="{{comic}}"></comic-card>
+    </template>
+  </template>
+  <script>
+    (function () {
+      Polymer({
+        comics: null
+      });
+    })();
+  </script>
+</polymer-element>

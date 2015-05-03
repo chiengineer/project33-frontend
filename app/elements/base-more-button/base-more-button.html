@@ -1,0 +1,26 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-elements/paper-elements.html">
+<link rel="import" href="../../bower_components/core-elements/core-elements.html">
+
+<polymer-element name="base-more-button" attributes="actions icon">
+  <template>
+    <link rel="stylesheet" href="base-more-button.scss">
+    <paper-menu-button>
+      <paper-icon-button icon="{{ icon }}"></paper-icon-button>
+      <paper-dropdown class="dropdown">
+        <core-menu class="menu">
+          <template repeat="{{ actions }}">
+            <paper-item noink>{{title}}</paper-item>
+          </template>
+        </core-menu>
+      </paper-dropdown>
+    </paper-menu-button>
+  </template>
+  <script>
+    (function () {
+      Polymer({
+        icon: 'more-vert'
+      });
+    })();
+  </script>
+</polymer-element>

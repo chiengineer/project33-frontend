@@ -6,8 +6,9 @@
   // Learn more about auto-binding templates at http://goo.gl/Dx1u2g
   var app = document.querySelector('#app');
   app.appName = 'Project-33';
+  app.displayComics = null;
   app.searchResponder = function (r) {
-                          console.log(r.detail.response.response)
+                          app.displayComics = r.detail.response.response;
                         }
 
   // Listen for template bound event to know when bindings
