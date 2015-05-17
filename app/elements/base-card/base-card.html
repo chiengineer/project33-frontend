@@ -1,0 +1,55 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-elements/paper-elements.html">
+<link rel="import" href="../../bower_components/core-elements/core-elements.html">
+
+<polymer-element name="base-card" attributes="type object">
+  <template>
+    <link rel="stylesheet" href="base-card.scss">
+    <paper-shadow z="1">
+      <div class="header">
+        <span class="content">
+          <span class="title">{{object.header.title}}</span>
+          <span class="subtitle">{{object.header.subtitle}}</span>
+        </span>
+        <base-more-button actions="{{object.actions}}"></base-more-button>
+      </div>
+      <base-card-images images={{object.images}}></base-card-images>
+      <base-card-description body="{{object.body}}"></base-card-description>
+    </paper-shadow>
+
+  </template>
+  <script>
+    (function () {
+      Polymer({
+        object: null,
+        type:      null
+      });
+    })();
+  </script>
+</polymer-element>
+
+<polymer-element name="base-card-description" attributes="body">
+  <template>
+    <div class="blurb">{{(body.blurb)}}</div>
+  </template>
+  <script>
+    (function () {
+      Polymer({
+        body: null
+      });
+    })();
+  </script>
+</polymer-element>
+
+<polymer-element name="base-card-images" attributes="images">
+  <template>
+    <div class="images"><img src="{{images.thumb_url}}"/></div>
+  </template>
+  <script>
+    (function () {
+      Polymer({
+        images: null
+      });
+    })();
+  </script>
+</polymer-element>

@@ -1,21 +1,8 @@
-<link rel="import" href="../../bower_components/polymer/polymer.html">
-<link rel="import" href="../../bower_components/paper-elements/paper-elements.html">
-<link rel="import" href="../../bower_components/core-elements/core-elements.html">
+<link rel="import" href="../base-card/base-card.html">
 
 <polymer-element name="comic-card" attributes="comic">
   <template>
-    <link rel="stylesheet" href="comic-card.scss">
-    <paper-shadow z="1">
-      <div class="header">
-        <span class="content">
-          <span class="title">{{comic.header.title}}</span>
-          <span class="subtitle">{{comic.header.subtitle}}</span>
-        </span>
-        <base-more-button actions="{{comic.actions}}"></base-more-button>
-      </div>
-      <div class="images"><img src="{{comic.images.thumb_url}}"/></div>
-    </paper-shadow>
-
+    <base-card type="{{comic.meta.source}}" object="{{comic}}"></base-card>
   </template>
   <script>
     (function () {

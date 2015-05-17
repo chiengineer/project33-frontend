@@ -13,7 +13,7 @@
       id="ajaxSearch"
       url="{{base}}{{path}}"
       method='GET'
-      params='{"minimal":true, "{{searchParam}}":"{{ value }}"}'
+      params='{"minimal":false, "{{searchParam}}":"{{ value }}"}'
       handleAs="json"
       on-core-response="{{ responseHandler }}">
     </core-ajax>
